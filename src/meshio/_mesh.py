@@ -158,7 +158,8 @@ class Mesh:
         self.cell_sets = {} if cell_sets is None else cell_sets
         self.gmsh_periodic = gmsh_periodic
         self.info = info
-
+        
+        """
         # assert point data consistency and convert to numpy arrays
         for key, item in self.point_data.items():
             self.point_data[key] = np.asarray(item)
@@ -167,7 +168,8 @@ class Mesh:
                     f"len(points) = {len(self.points)}, "
                     f'but len(point_data["{key}"]) = {len(self.point_data[key])}'
                 )
-
+        
+        """
         # assert cell data consistency and convert to numpy arrays
         for key, data in self.cell_data.items():
             if len(data) != len(cells):

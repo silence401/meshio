@@ -51,7 +51,7 @@ def read_buffer(f):
             # "s 1" or "s off" controls smooth shading
             pass
         elif split[0] == "f":
-            dat = [int(item.split("/")[0]) for item in split[1:]]
+            dat = [[int(item.split("/")[0]), int(item.split("/")[1]), int(item.split("/")[2])] for item in split[1:]]
             if len(face_groups) == 0 or (
                 len(face_groups[-1]) > 0 and len(face_groups[-1][-1]) != len(dat)
             ):
